@@ -3,22 +3,22 @@ import "./App.css";
 import Axios from "axios";
 
 function App() {
-  const [name, setName] = useState(null);
-  const [id, setId] = useState(null);
-  const [pass, setPass] = useState(null);
+  const [name, setName] = useState("");
+  const [id, setId] = useState("");
+  const [pass, setPass] = useState("");
   const [findId, setFindId] = useState([]);
   const [checkId, setCheckId] = useState(false);
 
   const idValue = (event) => {
-    setId(String(event.target.value));
+    setId(event.target.value);
   };
 
   const passValue = (event) => {
-    setPass(String(event.target.value));
+    setPass(event.target.value);
   };
 
   const nameValue = (event) => {
-    setName(String(event.target.value));
+    setName(event.target.value);
   };
 
   const onSubmit = (event) => {
@@ -31,21 +31,11 @@ function App() {
     });
   };
 
-  // useEffect(() => {
-  //   Axios.get("http://localhost:3002/Create/get").then((response) => {
-  //     setFindId(response.data);
-  //   });
-  // }, []);
-
-  // const idCheckTF = (event) => {
-  //   for (const i in findId) {
-  //     if (findId[i].id !== id) {
-  //       setCheckId(false);
-  //     } else {
-  //       setCheckId(true);
-  //     }
-  //   }
-  // };
+  useEffect(() => {
+    Axios.get("http://localhost:3002/Create/get").then((response) => {
+      setFindId(response.data);
+    });
+  }, []);
 
   return (
     <div className="App">
@@ -56,14 +46,9 @@ function App() {
         <input type="text" value={name} onChange={nameValue} />
         <label>id</label>
         <input type="text" value={id} onChange={idValue} />
-
+        {checkId ? <label>동일한 아이디가 존재합니다</label> : null}
         <label>password</label>
-        <input
-          type="password"
-          value={pass}
-          onChange={passValue}
-          disabled={checkId}
-        />
+        <input type="password" value={pass} onChange={passValue} />
         <button onClick={onSubmit}>Create</button>
       </form>
     </div>

@@ -5,12 +5,14 @@ const app = express();
 const port = 3002;
 const mySql = require("mysql");
 
-const createIdDB = mySql.createPool({
+const createIdDB = mySql.createConnection({
   host: "localhost",
   user: "root",
   password: "Jogyewon6372!",
   database: "cinema-project",
 });
+
+createIdDB.connect();
 
 app.use(cors());
 app.use(express.json());
@@ -29,7 +31,7 @@ app.post("/Create/insert", (req, res) => {
   const serverCreatePass = req.body.createPass;
 
   const sqlInsert =
-    "INSERT INTO createid (name, id, password) VALUES (?, ?, ?) ";
+    "INSERT INTO `cinema-project`.createid (name, id, password) VALUES (?, ?, ?) ";
   createIdDB.query(
     sqlInsert,
     [serverCreateName, serverCreateId, serverCreatePass],
