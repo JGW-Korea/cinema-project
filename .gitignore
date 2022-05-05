@@ -13,6 +13,7 @@
 
 #server
 config.js
+.env
 
 # misc
 .DS_Store
