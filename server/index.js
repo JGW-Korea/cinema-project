@@ -1,46 +1,52 @@
 const express = require("express");
-const bodyParser = require("body-parser");
-const cors = require("cors");
 const app = express();
 const port = 3002;
-const mySql = require("mysql");
 
-const createIdDB = mySql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "Jogyewon6372!",
-  database: "cinema-project",
-});
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const bcrypt = require("bcrypt");
 
-createIdDB.connect();
+const { sequelize, userSignUp } = require("./models");
 
-app.use(cors());
-app.use(express.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-
-app.get("/Create/get", (req, res) => {
-  const sqlInsertGet = "SELECT * FROM `cinema-project`.createid";
-  createIdDB.query(sqlInsertGet, (err, result) => {
-    res.send(result);
+sequelize
+  .sync({ force: false })
+  .then(() => {
+    console.log("DB 연결 성공");
+  })
+  .catch((err) => {
+    console.error(err);
   });
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(cors());
+
+app.get("/", (req, res) => {
+  res.send("HEllo");
 });
 
-app.post("/Create/insert", (req, res) => {
-  const serverCreateName = req.body.createName;
-  const serverCreateId = req.body.createId;
-  const serverCreatePass = req.body.createPass;
+app.post("/SignUp", async (req, res) => {
+  const signName = req.body.createName;
+  const signID = req.body.createId;
+  const signPass = req.body.createPass;
+  const signEmail = req.body.createEmail;
 
-  const sqlInsert =
-    "INSERT INTO `cinema-project`.createid (name, id, password) VALUES (?, ?, ?) ";
-  createIdDB.query(
-    sqlInsert,
-    [serverCreateName, serverCreateId, serverCreatePass],
-    (err, result) => {
-      console.log(result);
-    }
-  );
+  sequelize
+    .sync()
+    .then(() => {
+      return userSignUp.create({
+        userName: signName,
+        userEmail: signEmail,
+        userId: signID,
+        userPass: signPass,
+      });
+    })
+    .then((result) => {
+      console.log("success: true");
+    })
+    .catch((err) => {
+      console.log("success: false");
+    });
 });
 
-app.listen(port, () => {
-  console.log(`Running on port ${port}`);
-});
+app.listen(port, () => console.log(`Run port: ${port}`));
