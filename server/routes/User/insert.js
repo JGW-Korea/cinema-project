@@ -71,12 +71,12 @@ router.post("/find", async (req, res, next) => {
       //   userId: createId,
       //   userPass: hash,
       // });
-      return res.status(202).send("FuckYou");
+      return res.status(202).send("회원가입이 됬습니다.");
 
       // return res.status(202);
       // res.status(202).send("회원가입이 됬습니다.");
     } else {
-      return res.status(404).send("FuckYou");
+      return res.status(404).send("회원가입이 안됬습니다.");
     }
     // return res.status(404);
   } catch (err) {
