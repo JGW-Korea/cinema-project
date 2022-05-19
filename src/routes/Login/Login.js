@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useEffect, useState } from "react";
 // import { Link } from "react-router-dom";
 // import UserImg from "../../components/User/UserImg";
 import styles from "./Login.module.css";
@@ -11,6 +11,7 @@ function Login() {
   const [label, setLabel] = useState("");
   const [status, setStatus] = useState(0);
   const navigate = useNavigate();
+  const [n, setN] = useState("");
 
   const idChange = (event) => {
     setID(event.target.value);
@@ -19,6 +20,8 @@ function Login() {
     setPass(event.target.value);
   };
 
+  Axios.defaults.withCredentials = true;
+
   const onClick = (event) => {
     event.preventDefault();
     Axios.post("http://localhost:4000/login", {
@@ -26,16 +29,20 @@ function Login() {
       selectPASS: pass,
     }).then((res) => {
       if (res.status === 200) {
-        navigate(res.data);
+        navigate("/");
       } else if (res.status === 201) {
-        setStatus(res.status);
-        setLabel(res.data);
-      } else if (res.status === 202) {
         setStatus(res.status);
         setLabel(res.data);
       }
     });
   };
+
+  useEffect(() => {
+    Axios.get("http://localhost:4000/login").then((res) => {
+      setN(res.data.user[0].userId);
+    });
+  }, []);
+
   return (
     <div className={styles.LoginFrom}>
       <h2 className={styles.LoginFrom_h2}>Login form</h2>
@@ -47,7 +54,6 @@ function Login() {
           required
           className={styles.LoginFrom_input}
         />
-        {status === 202 ? <label>{label}</label> : null}
         <input
           type="password"
           value={pass}
@@ -56,6 +62,7 @@ function Login() {
           className={styles.LoginFrom_input}
         />
         {status === 201 ? <label>{label}</label> : null}
+        <label>{n}</label>
         <button className={styles.LoginFrom_btn} onClick={onClick}>
           Login
         </button>
