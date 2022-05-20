@@ -12,6 +12,7 @@ const passport = require("passport");
 const { sequelize, userSignUp } = require("./models");
 const joinRouter = require("./routes/User/signup");
 const LoginRouter = require("./routes/User/login");
+const LogoutRouter = require("./routes/User/logout");
 
 app.use(bodyParser.json());
 
@@ -53,6 +54,7 @@ app.get("/", (req, res) => {
 
 app.use("/join", joinRouter);
 app.use("/login", LoginRouter);
+app.use("/logout", LogoutRouter);
 
 app.listen(port, () => {
   console.log(`Running on port ${port}`);

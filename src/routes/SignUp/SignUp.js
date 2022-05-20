@@ -4,6 +4,7 @@ import styles from "./SignUp.module.css";
 import { FaUserCircle, FaLock, FaAddressCard } from "react-icons/fa";
 import { GrMail } from "react-icons/gr";
 import { Link } from "react-router-dom";
+import { IoIosArrowBack } from "react-icons/io";
 
 import UserImg from "../../components/UserImg";
 
@@ -75,6 +76,9 @@ function SignUp() {
 
       <div className={styles.signupBox}>
         <div className={styles.signupBox_login}>
+          <Link to={"/"}>
+            <IoIosArrowBack className={styles.signupBox_login_goHomePage} />
+          </Link>
           <h2 className={styles.signupBox_login_h2}>이미 회원이신가요?</h2>
           <span className={styles.signupBox_login_span}>
             회원이시면 아래 로그인 버튼을 눌러주세요

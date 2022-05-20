@@ -13,12 +13,20 @@ function Home() {
     });
   }, []);
 
+  const Logout = () => {
+    Axios.get("http://localhost:4000/logout").then((res) => {
+      setLogin(res.data.loggedIn);
+    });
+  };
+
+  // useEffect(() => {
+  //   Logout();
+  // }, []);
+
   return (
     <div>
       {login ? (
-        <button>
-          <Link to={`/Login`}>Logout</Link>
-        </button>
+        <button onClick={Logout}>Logout</button>
       ) : (
         <button>
           <Link to={`/Login`}>Login</Link>

@@ -57,6 +57,14 @@
   justify-content: center;
 }
 
+.signupBox_login_goHomePage {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 25px;
+  color: white;
+}
+
 .signupBox_login_h2,
 .signupBox_login_span,
 .signupBox_login_btn {

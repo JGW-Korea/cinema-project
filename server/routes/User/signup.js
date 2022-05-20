@@ -30,11 +30,16 @@ router.use("/insert", InsertRouter);
 
 router.get("/img", (req, res) => {
   const ImgFile = [
-    { Number: 1, Imgs: "action.jpg" },
-    { Number: 2, Imgs: "animation.jpg" },
-    { Number: 3, Imgs: "crime.jpg" },
-    { Number: 4, Imgs: "romance.jpg" },
-    { Number: 5, Imgs: "Hobie.jpg" },
+    { Number: 1, Imgs: "0.jpg" },
+    { Number: 2, Imgs: "1.jpg" },
+    { Number: 3, Imgs: "2.jpg" },
+    { Number: 4, Imgs: "3.jpg" },
+    { Number: 5, Imgs: "4.jpg" },
+    { Number: 6, Imgs: "5.jpg" },
+    { Number: 7, Imgs: "6.jpg" },
+    { Number: 8, Imgs: "7.jpg" },
+    { Number: 9, Imgs: "8.jpg" },
+    { Number: 10, Imgs: "9.jpg" },
   ];
 
   const n = Math.floor(Math.random() * Object.keys(ImgFile).length);
