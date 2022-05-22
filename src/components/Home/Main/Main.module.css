@@ -1,0 +1,36 @@
+.Main {
+  width: 100%;
+  height: 90vh;
+  position: relative;
+  display: flex;
+}
+
+.Main_video {
+  background-color: bisque;
+  width: 100%;
+  height: 90vh;
+  position: absolute;
+}
+
+.Main_movie {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 450px;
+  padding: 0 20%;
+  box-sizing: border-box;
+}
+
+.Main_movie_img {
+  width: 200px;
+  height: 300px;
+  background-color: brown;
+  transition: all 0.5s ease-in-out;
+}
+
+.Main_movie_img:hover {
+  height: 350px;
+}

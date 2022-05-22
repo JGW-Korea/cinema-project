@@ -1,0 +1,59 @@
+.Sidebar {
+  width: 100%;
+  height: 10vh;
+  background-color: #282828;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 3px 0 5px black;
+}
+
+.Sidebar_title {
+  height: 70px;
+  margin-left: 30%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.5s ease-in-out;
+}
+
+.Sidebar_title:hover {
+  color: #f72237;
+}
+
+.Sidebar_title_icon {
+  font-size: 50px;
+  margin-right: 5px;
+}
+.Sidebar_title_span {
+  font-size: 20px;
+  font-weight: 600;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+.Sidebar_option {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 30%;
+}
+
+.Sidebar_option_btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 30px;
+  cursor: pointer;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.Sidebar_option_btn_icon {
+  font-size: 20px;
+  margin-bottom: 5px;
+}

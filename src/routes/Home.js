@@ -1,41 +1,13 @@
-import Axios from "axios";
-import { React, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { React } from "react";
+
+import Sidebar from "../components/Home/Sidebar/Sidebar";
+import Main from "../components/Home/Main/Main";
 
 function Home() {
-  Axios.defaults.withCredentials = true;
-
-  const [login, setLogin] = useState(false);
-
-  useEffect(() => {
-    Axios.get("http://localhost:4000/login").then((res) => {
-      setLogin(res.data.loggedIn);
-    });
-  }, []);
-
-  const Logout = () => {
-    Axios.get("http://localhost:4000/logout").then((res) => {
-      setLogin(res.data.loggedIn);
-    });
-  };
-
-  // useEffect(() => {
-  //   Logout();
-  // }, []);
-
   return (
     <div>
-      {login ? (
-        <button onClick={Logout}>Logout</button>
-      ) : (
-        <button>
-          <Link to={`/Login`}>Login</Link>
-        </button>
-      )}
-
-      <button>
-        <Link to={`/Join`}>Join</Link>
-      </button>
+      <Sidebar />
+      <Main />
     </div>
   );
 }
