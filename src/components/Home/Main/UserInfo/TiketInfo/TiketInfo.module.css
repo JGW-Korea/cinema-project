@@ -1,0 +1,41 @@
+.Tiket_Box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 380px;
+}
+.Tiket_Box_Info {
+  width: 250px;
+  height: 350px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0px 0px 5px #b2b2b2;
+  justify-content: center;
+}
+
+.CancelBtn {
+  background-color: transparent;
+  border: none;
+  font-size: 25px;
+  margin: 10px;
+  position: absolute;
+  top: 5px;
+  right: 3px;
+  color: #b2b2b2;
+  cursor: pointer;
+  transition: 0.3s all ease-in;
+}
+
+.CancelBtn:hover {
+  color: #f72e3f;
+}
+
+.Tiket_Box_Info_Text {
+  height: 20px;
+  margin: 10px 20px;
+  font-size: 13px;
+  border-bottom: 1px solid #d3d3d3;
+}

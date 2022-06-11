@@ -1,0 +1,90 @@
+.Section_box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 380px;
+}
+.Section_img_box {
+  display: flex;
+  position: relative;
+  box-shadow: 0px 0px 3px black;
+  justify-content: center;
+}
+.Section_img_box,
+.Section_img,
+.Section_box_shadow {
+  width: 250px;
+  height: 350px;
+  border-radius: 20px;
+}
+
+.Section_box_shadow {
+  position: absolute;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  transition: 0.4s all ease-in-out;
+  padding: 20px;
+}
+
+.Section_box_shadow:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.movieTitle {
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: white;
+  visibility: hidden;
+  font-size: 13px;
+}
+.titleBtn,
+.reviewBtn {
+  width: 150px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+  font-family: "SEBANG";
+  visibility: hidden;
+  box-shadow: 0px 2px 5px black;
+  color: #333333;
+  text-decoration: none;
+  transition: 0.3s all ease-in-out;
+}
+
+.titleBtn {
+  background-color: white;
+}
+
+.reviewBtn {
+  background-color: #f72e3f;
+}
+
+.titleBtn:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.reviewBtn:hover {
+  background-color: rgba(247, 46, 63, 0.7);
+}
+
+.movieRview {
+  color: white;
+  visibility: hidden;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.Section_box_shadow:hover > * {
+  visibility: visible;
+}

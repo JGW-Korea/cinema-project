@@ -8,6 +8,7 @@ const development = {
   database: env.MYSQL_DATABASE,
   host: env.MYSQL_HOST,
   dialect: "mysql",
+  timezone: env.MYSQL_TIMEZONE,
   logging: false,
   //port: env.MYSQL_PORT
 };
@@ -18,6 +19,8 @@ const production = {
   database: env.MYSQL_DATABASE,
   host: env.MYSQL_HOST,
   dialect: "mysql",
+  timezone: env.MYSQL_TIMEZONE,
+
   logging: false,
 
   //port: env.MYSQL_PORT
@@ -29,6 +32,8 @@ const test = {
   database: env.MYSQL_DATABASE_TEST,
   host: env.MYSQL_HOST,
   dialect: "mysql",
+  timezone: env.MYSQL_TIMEZONE,
+
   logging: false,
 
   //port: env.MYSQL_PORT

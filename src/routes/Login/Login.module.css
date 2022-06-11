@@ -1,0 +1,147 @@
+.LoginFrom {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3a3a3a;
+  background-color: #3a3a3a;
+}
+
+.LoginFromBox {
+  width: 800px;
+  height: 320px;
+  background-color: rgba(45, 45, 45, 0.8);
+  border-radius: 10px;
+  position: absolute;
+  table-layout: fixed;
+  display: flex;
+  z-index: 1;
+  box-shadow: 0px 0px 5px #3c3c3c;
+}
+
+.LoginFrom_login {
+  width: 350px;
+  height: 600px;
+  background-color: #eaeaea;
+  border-radius: 10px;
+  position: relative;
+  left: 25px;
+  top: -120px;
+  box-shadow: 0px 0 5px #222222;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.LoginFrom_login_div {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.LoginFrom_login_label {
+  margin: 10px 0px;
+  display: flex;
+  align-items: center;
+  color: black;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.LoginFrom_login_label_icons {
+  margin-right: 5px;
+}
+
+.LoginFrom_login_div input {
+  width: 250px;
+  height: 15px;
+  border: 1px solid rgb(167, 167, 167);
+  border-radius: 10px;
+  background-color: transparent;
+  transition: 0.3s ease-in-out;
+  font-size: 15px;
+  outline: none;
+  padding: 10px;
+  padding-left: 20px;
+}
+.LoginFrom_login_div_input:hover {
+  border: 1px solid #ed5244;
+  transition: 0.3s ease-in-out;
+}
+.LoginFrom_login_div_input:focus {
+  border: 1px solid #ed5244;
+}
+
+.LoginFrom_login_label_button {
+  margin: 20px 0;
+  width: 282px;
+  height: 37px;
+  border-radius: 10px;
+  border: 1px solid rgb(167, 167, 167);
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.LoginFrom_login_label_button:hover {
+  border: 1px solid #ed5244;
+  transition: 0.3s ease-in-out;
+}
+
+.LoginFromBox_login {
+  width: 450px;
+  height: 320px;
+  border-radius: 10px 0 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+}
+
+.LoginFromBox_login_goHomePage {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 25px;
+  color: black;
+}
+
+.LoginFromBox_login_h2,
+.LoginFromBox_login_span,
+.LoginFromBox_login_btn {
+  margin: 20px;
+}
+.LoginFromBox_login_h2 {
+  color: white;
+  font-weight: 600;
+  font-size: 25px;
+}
+.LoginFromBox_login_span {
+  color: #d6d6d6;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.LoginFromBox_login_btn {
+  margin: 20px 0;
+  width: 282px;
+  height: 37px;
+  border-radius: 10px;
+  border: 1px solid rgb(167, 167, 167);
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.LoginFromBox_login_btn:hover {
+  border: 1px solid #ed5244;
+  transition: 0.3s ease-in-out;
+}
+
+.Error_Label {
+  font-size: 10px;
+  margin-top: 5px;
+  text-align: center;
+  color: #ed5244;
+}

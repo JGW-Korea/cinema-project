@@ -1,15 +1,13 @@
 import { React } from "react";
-import { Link } from "react-router-dom";
+
+import Sidebar from "../components/Sidebar/Sidebar";
+import Main from "../components/Home/Main/Main";
 
 function Home() {
   return (
     <div>
-      <button>
-        <Link to={`/Login`}>Login</Link>
-      </button>
-      <button>
-        <Link to={`/Join`}>Join</Link>
-      </button>
+      <Sidebar />
+      <Main />
     </div>
   );
 }

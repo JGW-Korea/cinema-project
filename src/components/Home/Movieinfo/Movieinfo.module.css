@@ -1,0 +1,144 @@
+.MoviePage {
+  width: 100%;
+  height: 100vh;
+}
+
+.MoviePageMain {
+  width: 80%;
+  height: auto;
+  margin: 3rem auto;
+  justify-content: center;
+  position: relative;
+}
+
+.MoviePageMain_Info {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.MoviePage_MoviePoster {
+  width: 200px;
+  height: 300px;
+  margin-right: 40px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px black;
+}
+
+.MoviePage_MovieInfo {
+  width: 1000px;
+}
+
+.MoviePage_MovieTitle {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.MoviePage_MovieReview {
+  display: block;
+  line-height: 22px;
+}
+
+.Hr {
+  margin: 10px 0;
+}
+
+.MoviePage_MovieActor {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.MoviePage_Btn {
+  width: 150px;
+  height: 30px;
+  background-color: #f72e3f;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  border: 0px;
+  border-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
+  font-family: "SEBANG";
+  box-shadow: 0px 2px 5px black;
+  color: #333333;
+  text-decoration: none;
+  transition: 0.3s all ease-in-out;
+}
+
+.MoviePage_Btn:hover {
+  background-color: #930a16;
+}
+
+.MoviePageMain_Line {
+  margin: 30px 0;
+}
+
+.MoviePageComment {
+  width: 80%;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.MoviePageComment_from {
+  width: 800px;
+  height: 50px;
+  border: 1px solid #b7b7b7;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.MoviePageComment_input {
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: none;
+  text-align: center;
+}
+
+.MoviePageComment_input:disabled {
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 100%;
+}
+
+.MoviePageComment_Btn {
+  width: 150px;
+  height: 100%;
+  right: 0px;
+  position: absolute;
+  border: 0;
+  cursor: pointer;
+  background-color: #f72e3f;
+  font-family: "SEBANG";
+  color: #333333;
+  font-size: 15px;
+}
+.MoviePageComment_Btn:disabled {
+  cursor: default;
+}
+
+.MoviePageComment_span {
+  width: 800px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #b7b7b7;
+  color: #8e8e8e;
+  font-size: 18px;
+  left: 0;
+}

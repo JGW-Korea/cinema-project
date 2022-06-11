@@ -1,10 +1,12 @@
 import { React, useState } from "react";
 import Axios from "axios";
-import "./SignUp.css";
+import styles from "./SignUp.module.css";
 import { FaUserCircle, FaLock, FaAddressCard } from "react-icons/fa";
 import { GrMail } from "react-icons/gr";
 import { Link } from "react-router-dom";
-import UserImg from "../../components/User/UserImg";
+import { IoIosArrowBack } from "react-icons/io";
+
+import UserImg from "../../components/UserImg";
 
 function SignUp() {
   const [name, setName] = useState("");
@@ -69,22 +71,27 @@ function SignUp() {
   };
 
   return (
-    <div className="signup">
+    <div className={styles.signup}>
       <UserImg />
 
-      <div className="signupBox">
-        <div className="signupBox_login">
-          <h2>이미 회원이신가요?</h2>
-          <span>회원이시면 아래 로그인 버튼을 눌러주세요</span>
+      <div className={styles.signupBox}>
+        <div className={styles.signupBox_login}>
+          <Link to={"/"}>
+            <IoIosArrowBack className={styles.signupBox_login_goHomePage} />
+          </Link>
+          <h2 className={styles.signupBox_login_h2}>이미 회원이신가요?</h2>
+          <span className={styles.signupBox_login_span}>
+            회원이시면 아래 로그인 버튼을 눌러주세요
+          </span>
           <Link to={`/Login`}>
-            <button>로그인</button>
+            <button className={styles.signupBox_login_btn}>로그인</button>
           </Link>
         </div>
 
-        <div className="signupBox_join">
-          <div className="signupBox_join_div">
-            <div className="signupBox_join-label">
-              <FaAddressCard className="signupBox_join-label-icons" />
+        <div className={styles.signupBox_join}>
+          <div className={styles.signupBox_join_div}>
+            <div className={styles.signupBox_join_label}>
+              <FaAddressCard className={styles.signupBox_join_label_icons} />
               <label>Name</label>
             </div>
             <input
@@ -93,11 +100,12 @@ function SignUp() {
               onChange={nameValue}
               id="name"
               placeholder="Your Name"
+              className={styles.signupBox_join_div_input}
             />
           </div>
-          <div className="signupBox_join_div">
-            <div className="signupBox_join-label">
-              <GrMail className="signupBox_join-label-icons" />
+          <div className={styles.signupBox_join_div}>
+            <div className={styles.signupBox_join_label}>
+              <GrMail className={styles.signupBox_join_label_icons} />
               <label>Email</label>
             </div>
             <input
@@ -106,14 +114,15 @@ function SignUp() {
               onChange={mailValue}
               onBlur={mailDIS}
               placeholder="Your Email@gmail.com"
+              className={styles.signupBox_join_div_input}
             />
             {mailIndex === 200 ? (
-              <label className="Error-Label">{MailCheck}</label>
+              <label className={styles.Error_Label}>{MailCheck}</label>
             ) : null}
           </div>
-          <div className="signupBox_join_div">
-            <div className="signupBox_join-label">
-              <FaUserCircle className="signupBox_join-label-icons" />
+          <div className={styles.signupBox_join_div}>
+            <div className={styles.signupBox_join_label}>
+              <FaUserCircle className={styles.signupBox_join_label_icons} />
               <label>ID</label>
             </div>
             <input
@@ -122,14 +131,15 @@ function SignUp() {
               onChange={idValue}
               onBlur={idDIS}
               placeholder="Your ID"
+              className={styles.signupBox_join_div_input}
             />
             {idIndex === 201 ? (
-              <label className="Error-Label">{IdCheck}</label>
+              <label className={styles.Error_Label}>{IdCheck}</label>
             ) : null}
           </div>
-          <div className="signupBox_join_div">
-            <div className="signupBox_join-label">
-              <FaLock className="signupBox_join-label-icons" />
+          <div className={styles.signupBox_join_div}>
+            <div className={styles.signupBox_join_label}>
+              <FaLock className={styles.signupBox_join_label_icons} />
               <label>Password</label>
             </div>
             <input
@@ -138,19 +148,22 @@ function SignUp() {
               onChange={passValue}
               onBlur={findDIS}
               placeholder="Your Password"
+              className={styles.signupBox_join_div_input}
             />
           </div>
           {findInex === 202 ? (
             <Link to={"/Login"}>
               <button
-                className="signupBox_join-label-button"
+                className={styles.signupBox_join_label_button}
                 onClick={onSubmit}
               >
                 Join In
               </button>
             </Link>
           ) : (
-            <button className="signupBox_join-label-button">Join In</button>
+            <button className={styles.signupBox_join_label_button}>
+              Join In
+            </button>
           )}
         </div>
       </div>

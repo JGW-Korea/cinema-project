@@ -1,0 +1,61 @@
+.PagesBox {
+  width: 100%;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.PagesBox_Post {
+  font-size: 18px;
+  width: 80%;
+  height: 40px;
+  border-bottom: 1px solid #dddddd;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.PagesBox_Post_User {
+  width: 20%;
+}
+.PagesBox_Post_Text {
+  width: 80%;
+}
+
+.paginationBtn {
+  width: 80%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  font-size: 15px;
+  margin-top: 10px;
+  color: black;
+}
+
+.paginationBtn a {
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+  transition: 0.3s all ease-in-out;
+}
+
+.paginationBtn a:hover {
+  color: rgb(0, 0, 0);
+}
+.paginationActive a {
+  color: #f72e3f;
+  text-decoration: 1px underline #f72e3f;
+}
+
+.PostDelete {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.PostDelete:hover {
+  color: #f72e3f;
+}

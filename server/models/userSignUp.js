@@ -7,6 +7,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         autoIncrement: true,
         unique: true,
+        primaryKey: true,
       },
       userName: {
         type: DataTypes.STRING(100),
@@ -21,9 +22,8 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       userId: {
-        type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV4,
-        primaryKey: true,
+        type: DataTypes.STRING(100),
+        allowNull: false,
       },
       userPass: {
         type: DataTypes.STRING(100),
